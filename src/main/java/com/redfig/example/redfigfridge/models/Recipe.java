@@ -1,6 +1,10 @@
 package com.redfig.example.redfigfridge.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.hibernate.annotations.Cascade;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,11 +23,22 @@ public class Recipe {
     @Column(name = "method")
     private String method;
 
+    @ManyToMany
+    @JsonIgnoreProperties({"recipes"})
+    @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
+    @JoinTable(
+            name = "foods_recipes",
+            joinColumns = {@JoinColumn(name = "recipe_id", nullable = false, updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "food_id", nullable = false, updatable = false)}
+    )
+    private List<Food> foods;
+
     public Recipe(String name, com.redfig.example.redfigfridge.models.recipeType recipeType, Integer cookTime, String method) {
         this.name = name;
         this.recipeType = recipeType;
         this.cookTime = cookTime;
         this.method = method;
+        this.foods = new ArrayList<>();
     }
 
     public Recipe() {
@@ -67,5 +82,17 @@ public class Recipe {
 
     public void setMethod(String method) {
         this.method = method;
+    }
+
+    public List<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<Food> foods) {
+        this.foods = foods;
+    }
+
+    public void addFood(Food food){
+        this.foods.add(food);
     }
 }
