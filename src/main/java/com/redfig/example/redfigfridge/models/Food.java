@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="foods")
-public class food {
+public class Food {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class food {
     @Column(name="fridgeFood")
     private Boolean fridgeFood;
 
-    public food(String name, Integer calories, com.redfig.example.redfigfridge.models.foodType foodType, Boolean pantryFood, Boolean fridgeFood) {
+    public Food(String name, Integer calories, com.redfig.example.redfigfridge.models.foodType foodType, Boolean pantryFood, Boolean fridgeFood) {
         this.name = name;
         this.calories = calories;
         this.foodType = foodType;
@@ -28,7 +28,7 @@ public class food {
         this.fridgeFood = fridgeFood;
     }
 
-    public food() {
+    public Food() {
     }
 
     public Long getId() {
