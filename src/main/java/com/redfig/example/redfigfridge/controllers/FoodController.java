@@ -5,9 +5,7 @@ import com.redfig.example.redfigfridge.repositories.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,18 @@ public class FoodController {
     @GetMapping(value = "/foods/{id}")
     public ResponseEntity getIndividualFood(@PathVariable Long id){
         return new ResponseEntity<>(foodRepository.findById(id), HttpStatus.OK);
+    }
+
+    @PostMapping(value="/foods")
+    public ResponseEntity<Food> postFood(@RequestBody Food food){
+        foodRepository.save(food);
+        return new ResponseEntity<>(food, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(value="/foods/{id}")
+    public ResponseEntity<Food> deleteFood(@PathVariable Long id){
+        Food found = foodRepository.getById(id);
+        foodRepository.delete(found);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
