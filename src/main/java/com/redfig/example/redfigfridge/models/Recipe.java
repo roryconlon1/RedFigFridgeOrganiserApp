@@ -17,6 +17,7 @@ public class Recipe {
     @Column(name = "name")
     private String name;
     @Column(name = "recipe_type")
+    @Enumerated(value=EnumType.STRING)
     private RecipeType recipeType;
     @Column(name = "cook_time")
     private Integer cookTime;
