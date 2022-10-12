@@ -1,6 +1,6 @@
 package com.redfig.example.redfigfridge.models;
 
-public enum foodType {
+public enum FoodType {
 
     CARBOHYDRATE,
     PROTEIN,

@@ -1,6 +1,6 @@
 package com.redfig.example.redfigfridge.models;
 
-public enum recipeType {
+public enum RecipeType {
     SOUP,
     PASTA,
     SALAD,

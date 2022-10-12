@@ -17,7 +17,7 @@ public class Recipe {
     @Column(name = "name")
     private String name;
     @Column(name = "recipe_type")
-    private recipeType recipeType;
+    private RecipeType recipeType;
     @Column(name = "cook_time")
     private Integer cookTime;
     @Column(name = "method")
@@ -33,7 +33,7 @@ public class Recipe {
     )
     private List<Food> foods;
 
-    public Recipe(String name, com.redfig.example.redfigfridge.models.recipeType recipeType, Integer cookTime, String method) {
+    public Recipe(String name, RecipeType recipeType, Integer cookTime, String method) {
         this.name = name;
         this.recipeType = recipeType;
         this.cookTime = cookTime;
@@ -60,11 +60,11 @@ public class Recipe {
         this.name = name;
     }
 
-    public com.redfig.example.redfigfridge.models.recipeType getRecipeType() {
+    public RecipeType getRecipeType() {
         return recipeType;
     }
 
-    public void setRecipeType(com.redfig.example.redfigfridge.models.recipeType recipeType) {
+    public void setRecipeType(RecipeType recipeType) {
         this.recipeType = recipeType;
     }
 

@@ -2,8 +2,8 @@ package com.redfig.example.redfigfridge;
 
 import com.redfig.example.redfigfridge.models.Food;
 import com.redfig.example.redfigfridge.models.Recipe;
-import com.redfig.example.redfigfridge.models.foodType;
-import com.redfig.example.redfigfridge.models.recipeType;
+import com.redfig.example.redfigfridge.models.FoodType;
+import com.redfig.example.redfigfridge.models.RecipeType;
 import com.redfig.example.redfigfridge.repositories.FoodRepository;
 import com.redfig.example.redfigfridge.repositories.RecipeRepository;
 import org.junit.jupiter.api.Test;
@@ -30,9 +30,9 @@ class RedfigfridgeApplicationTests {
 	
 	@Test
 	public void canGetFoodAndRecipe(){
-		Food food = new Food("Banana", 200, foodType.FRUIT, true, false);
+		Food food = new Food("Banana", 200, FoodType.FRUIT, true, false);
 		foodRepository.save(food);
-		Recipe recipe = new Recipe("Banana Split", recipeType.DESERT, 10, "CutAndAdd");
+		Recipe recipe = new Recipe("Banana Split", RecipeType.DESERT, 10, "CutAndAdd");
 		recipeRepository.save(recipe);
 	}
 

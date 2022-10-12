@@ -19,7 +19,8 @@ public class Food {
     @Column(name="calories")
     private Integer calories;
     @Column(name="foodType")
-    private foodType foodType;
+    @Enumerated(value=EnumType.STRING)
+    private FoodType foodType;
     @Column(name="pantryFood")
     private Boolean pantryFood;
     @Column(name="fridgeFood")
@@ -35,7 +36,7 @@ public class Food {
     )
     private List<Recipe> recipes;
 
-    public Food(String name, Integer calories, com.redfig.example.redfigfridge.models.foodType foodType, Boolean pantryFood, Boolean fridgeFood) {
+    public Food(String name, Integer calories, FoodType foodType, Boolean pantryFood, Boolean fridgeFood) {
         this.name = name;
         this.calories = calories;
         this.foodType = foodType;
@@ -71,11 +72,11 @@ public class Food {
         this.calories = calories;
     }
 
-    public com.redfig.example.redfigfridge.models.foodType getFoodType() {
+    public FoodType getFoodType() {
         return foodType;
     }
 
-    public void setFoodType(com.redfig.example.redfigfridge.models.foodType foodType) {
+    public void setFoodType(FoodType foodType) {
         this.foodType = foodType;
     }
 
