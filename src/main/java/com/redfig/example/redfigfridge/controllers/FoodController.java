@@ -1,7 +1,9 @@
 package com.redfig.example.redfigfridge.controllers;
 
 import com.redfig.example.redfigfridge.models.Food;
+import com.redfig.example.redfigfridge.models.Recipe;
 import com.redfig.example.redfigfridge.repositories.FoodRepository;
+import com.redfig.example.redfigfridge.repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,9 @@ public class FoodController {
 
     @Autowired
     FoodRepository foodRepository;
+
+    @Autowired
+    RecipeRepository recipeRepository;
 
     @GetMapping(value = "/foods")
     public ResponseEntity<List<Food>> getAllFoods(){
@@ -37,4 +42,14 @@ public class FoodController {
         foodRepository.delete(found);
         return new ResponseEntity<>(null, HttpStatus.OK);
     }
+
+    @PostMapping(value = "/foods/{foodsId}/addRecipe/{recipeId}")
+    public ResponseEntity<Food> addRecipe(@PathVariable Long foodId, @PathVariable Long recipeId){
+        Food food = foodRepository.findById(foodId).get();
+        Recipe recipe = recipeRepository.findById(recipeId).get();
+        food.addRecipe(recipe);
+        foodRepository.save(food);
+        return new ResponseEntity<>(food, HttpStatus.OK);
+    }
+
 }
