@@ -51,11 +51,11 @@ public class DataLoader implements ApplicationRunner {
         Food bread = new Food("Bread", 100, FoodType.CARBOHYDRATE, true, false);
         foodRepository.save(bread);
 
-        Recipe spagBol = new Recipe("Spaghetti Bolognese", RecipeType.PASTA, 300, "Chop veg, cook it, add mice, cook it, come back in 5 hours");
+        Recipe spagBol = new Recipe("Spaghetti Bolognese", RecipeType.PASTA, 300, "Chop veg, cook it, add mice, cook it, come back in 5 hours", "https://recipetineats.com/wp-content/uploads/2018/07/Spaghetti-Bolognese.jpg");
         recipeRepository.save(spagBol);
-        Recipe bananaBread = new Recipe("Banana Bread", RecipeType.DESERT, 45, "Mix ingredients and fling it in the oven.");
+        Recipe bananaBread = new Recipe("Banana Bread", RecipeType.DESERT, 45, "Mix ingredients and fling it in the oven.", "https://www.simplyrecipes.com/thmb/n0haOVlgXcM8Sr53p3C-U53YP2U=/4399x3299/smart/filters:no_upscale()/Simply-Recipes-Easy-Banana-Bread-LEAD-2-2-63dd39af009945d58f5bf4c2ae8d6070.jpg");
         recipeRepository.save(bananaBread);
-        Recipe beansOnToast = new Recipe("Beans on Toast", RecipeType.DESERT, 10, "Cook beans n place it on toast.");
+        Recipe beansOnToast = new Recipe("Beans on Toast", RecipeType.DESERT, 10, "Cook beans n place it on toast.", "https://yourcookingbuddy.com/wp-content/uploads/2022/02/baked-beans-toast-img-11.jpg");
         recipeRepository.save(beansOnToast);
 
         spagBol.addFood(mince);

@@ -24,6 +24,9 @@ public class Recipe {
     @Column(name = "method")
     private String method;
 
+    @Column(name="image")
+    private String image;
+
     @ManyToMany
     @JsonIgnoreProperties({"recipes"})
     @Cascade(org.hibernate.annotations.CascadeType.SAVE_UPDATE)
@@ -34,11 +37,12 @@ public class Recipe {
     )
     private List<Food> foods;
 
-    public Recipe(String name, RecipeType recipeType, Integer cookTime, String method) {
+    public Recipe(String name, RecipeType recipeType, Integer cookTime, String method, String image) {
         this.name = name;
         this.recipeType = recipeType;
         this.cookTime = cookTime;
         this.method = method;
+        this.image = image;
         this.foods = new ArrayList<>();
     }
 
@@ -95,5 +99,13 @@ public class Recipe {
 
     public void addFood(Food food){
         this.foods.add(food);
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
