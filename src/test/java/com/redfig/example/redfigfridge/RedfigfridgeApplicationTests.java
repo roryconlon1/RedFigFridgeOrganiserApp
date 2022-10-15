@@ -28,13 +28,13 @@ class RedfigfridgeApplicationTests {
 	void contextLoads() {
 	}
 	
-	@Test
-	public void canGetFoodAndRecipe(){
-		Food food = new Food("Banana", 200, FoodType.FRUIT, true, false);
-		foodRepository.save(food);
-		Recipe recipe = new Recipe("Banana Split", RecipeType.DESERT, 10, "CutAndAdd");
-		recipeRepository.save(recipe);
-	}
+//	@Test
+//	public void canGetFoodAndRecipe(){
+//		Food food = new Food("Banana", 200, FoodType.FRUIT, true, false);
+//		foodRepository.save(food);
+//		Recipe recipe = new Recipe("Banana Split", RecipeType.DESERT, 10, "CutAndAdd");
+//		recipeRepository.save(recipe);
+//	}
 
 
 }
