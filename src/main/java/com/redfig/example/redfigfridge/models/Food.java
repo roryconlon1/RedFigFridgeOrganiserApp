@@ -39,7 +39,12 @@ public class Food {
     )
     private List<Recipe> recipes;
 
-    public Food(String name, Integer calories, FoodType foodType, Boolean pantryFood, Boolean fridgeFood, String image) {
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable = true)
+    @JsonIgnoreProperties({"foods", "recipes"})
+    private User user;
+
+    public Food(String name, Integer calories, FoodType foodType, Boolean pantryFood, Boolean fridgeFood, String image, User user) {
         this.name = name;
         this.calories = calories;
         this.foodType = foodType;
@@ -47,6 +52,7 @@ public class Food {
         this.fridgeFood = fridgeFood;
         this.image = image;
         this.recipes = new ArrayList<>();
+        this.user = user;
     }
 
     public Food() {
@@ -118,5 +124,13 @@ public class Food {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
