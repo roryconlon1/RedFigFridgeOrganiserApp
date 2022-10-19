@@ -85,6 +85,12 @@ public class DataLoader implements ApplicationRunner {
         foodRepository.save(milk);
         Food potato = new Food ("Potato (200g)", 130, FoodType.CARBOHYDRATE, false, true, "https://www.macmillandictionary.com/external/slideshow/full/141151_full.jpg", paul);
         foodRepository.save(potato);
+        Food beef = new Food ("Diced Beef (300g)", 220, FoodType.PROTEIN, false, true, "https://www.thedogschoice.com/wp-content/uploads/2019/01/Beef-Chunks.jpg", paul);
+        foodRepository.save(beef);
+        Food oliveOil = new Food ("Olive Oil (100ml)", 120, FoodType.FAT, true, false, "https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321246/olive-oil-in-a-bottle-which-may-be-used-on-the-face.jpg", paul);
+        foodRepository.save(oliveOil);
+        Food mushroom = new Food("Mushroom (80g)", 70, FoodType.VEGETABLE, false, true, "https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/278858_2200-1200x628.jpg", paul);
+        foodRepository.save(mushroom);
 
 
         Recipe spagBol = new Recipe("Spaghetti Bolognese", RecipeType.PASTA, 300, "Chop veg and add it into a pan with oil.", "After the vegetables are softened add the mince until browned and add tomato.", "Finally cook spaghetti and top with mince.", "https://recipetineats.com/wp-content/uploads/2018/07/Spaghetti-Bolognese.jpg", paul);
@@ -103,8 +109,11 @@ public class DataLoader implements ApplicationRunner {
         recipeRepository.save(loadedFries);
         Recipe mushroomStrog = new Recipe("Mushroom Strogganoff", RecipeType.DIET, 110, "Braise Beef and add vegetables and stock.", "Reduce by half.", "Serve atop cooked pasta.", "https://images-gmi-pmc.edge-generalmills.com/a055d263-34ed-412e-a000-28899e84d501.jpg", paul);
         recipeRepository.save(mushroomStrog);
+        Recipe minceNTatties = new Recipe("Mince and Tatties", RecipeType.FAMILY, 100, "Brown beef and add vegetables.", "Add stock and reduce.", "Boil and mash Potatoes and serve with mince.", "https://gocookyummy.com/wp-content/uploads/2021/07/featured-image_mince-tatties.jpg", paul);
+        recipeRepository.save(minceNTatties);
 
         spagBol.addFood(mince);
+        mushroomStrog.addFood(oliveOil);
         spagBol.addFood(onion);
         spagBol.addFood(carrot);
         spagBol.addFood(choppedTomato);
@@ -126,6 +135,7 @@ public class DataLoader implements ApplicationRunner {
         carbonara.addFood(egg);
         carbonara.addFood(egg);
         carbonara.addFood(egg);
+        mushroomStrog.addFood(oliveOil);
         carbonara.addFood(bacon);
         carbonara.addFood(spaghetti);
         carbonara.addFood(parmesan);
@@ -149,6 +159,27 @@ public class DataLoader implements ApplicationRunner {
         macNCheese.addFood(mozz);
         macNCheese.addFood(gruyere);
         recipeRepository.save(macNCheese);
+
+        mushroomStrog.addFood(beef);
+        mushroomStrog.addFood(oliveOil);
+        mushroomStrog.addFood(carrot);
+        mushroomStrog.addFood(onion);
+        mushroomStrog.addFood(mushroom);
+        mushroomStrog.addFood(macaroni);
+        recipeRepository.save(mushroomStrog);
+
+        loadedFries.addFood(oliveOil);
+        loadedFries.addFood(bacon);
+        loadedFries.addFood(cheddar);
+        loadedFries.addFood(potato);
+        recipeRepository.save(loadedFries);
+
+        minceNTatties.addFood(oliveOil);
+        minceNTatties.addFood(mince);
+        minceNTatties.addFood(onion);
+        minceNTatties.addFood(carrot);
+        minceNTatties.addFood(potato);
+        recipeRepository.save(minceNTatties);
 
     }
 }
