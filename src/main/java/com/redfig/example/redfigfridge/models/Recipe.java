@@ -20,8 +20,15 @@ public class Recipe {
     private RecipeType recipeType;
     @Column(name = "cook_time")
     private Integer cookTime;
-    @Column(name = "method")
-    private String method;
+
+    @Column(name = "method1")
+    private String method1;
+
+    @Column(name = "method2")
+    private String method2;
+
+    @Column(name = "method3")
+    private String method3;
 
     @Column(name="image")
     private String image;
@@ -41,11 +48,13 @@ public class Recipe {
     @JsonIgnoreProperties({"recipes", "foods"})
     private User user;
 
-    public Recipe(String name, RecipeType recipeType, Integer cookTime, String method, String image, User user) {
+    public Recipe(String name, RecipeType recipeType, Integer cookTime, String method1, String method2, String method3, String image, User user) {
         this.name = name;
         this.recipeType = recipeType;
         this.cookTime = cookTime;
-        this.method = method;
+        this.method1 = method1;
+        this.method2 = method2;
+        this.method3 = method3;
         this.image = image;
         this.foods = new ArrayList<>();
         this.user = user;
@@ -86,13 +95,6 @@ public class Recipe {
         this.cookTime = cookTime;
     }
 
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
-    }
 
     public List<Food> getFoods() {
         return foods;
@@ -120,5 +122,29 @@ public class Recipe {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getMethod1() {
+        return method1;
+    }
+
+    public void setMethod1(String method1) {
+        this.method1 = method1;
+    }
+
+    public String getMethod2() {
+        return method2;
+    }
+
+    public void setMethod2(String method2) {
+        this.method2 = method2;
+    }
+
+    public String getMethod3() {
+        return method3;
+    }
+
+    public void setMethod3(String method3) {
+        this.method3 = method3;
     }
 }

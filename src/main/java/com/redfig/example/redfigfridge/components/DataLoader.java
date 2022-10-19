@@ -84,17 +84,17 @@ public class DataLoader implements ApplicationRunner {
         Food milk = new Food("Milk (150ml)", 95, FoodType.DAIRY, false, true, "https://kerrsdairy.co.uk/wp-content/uploads/2021/12/1-Pint-Whole-Milk-Glass.jpg", paul);
         foodRepository.save(milk);
 
-        Recipe spagBol = new Recipe("Spaghetti Bolognese", RecipeType.PASTA, 300, "Chop veg, cook it, add mice, cook it, come back in 5 hours", "https://recipetineats.com/wp-content/uploads/2018/07/Spaghetti-Bolognese.jpg", paul);
+        Recipe spagBol = new Recipe("Spaghetti Bolognese", RecipeType.PASTA, 300, "Chop veg and add it into a pan with oil.", "After the vegetables are softened add the mince until browned and add tomato.", "Finally cook spaghetti and top with mince.", "https://recipetineats.com/wp-content/uploads/2018/07/Spaghetti-Bolognese.jpg", paul);
         recipeRepository.save(spagBol);
-        Recipe bananaBread = new Recipe("Banana Bread", RecipeType.DESERT, 45, "Mix ingredients and fling it in the oven.", "https://www.simplyrecipes.com/thmb/n0haOVlgXcM8Sr53p3C-U53YP2U=/4399x3299/smart/filters:no_upscale()/Simply-Recipes-Easy-Banana-Bread-LEAD-2-2-63dd39af009945d58f5bf4c2ae8d6070.jpg", paul);
+        Recipe bananaBread = new Recipe("Banana Bread", RecipeType.DESERT, 45, "Mix dry and wet ingredients separately then combine together.", "Place mixture into a lined tin and cook at 180.", "Serve and enjoy.", "https://www.simplyrecipes.com/thmb/n0haOVlgXcM8Sr53p3C-U53YP2U=/4399x3299/smart/filters:no_upscale()/Simply-Recipes-Easy-Banana-Bread-LEAD-2-2-63dd39af009945d58f5bf4c2ae8d6070.jpg", paul);
         recipeRepository.save(bananaBread);
-        Recipe beansOnToast = new Recipe("Beans on Toast", RecipeType.DIET, 10, "Cook beans n place it on toast.", "https://yourcookingbuddy.com/wp-content/uploads/2022/02/baked-beans-toast-img-11.jpg", paul);
+        Recipe beansOnToast = new Recipe("Beans on Toast", RecipeType.DIET, 10, "Cook beans.", "Turn bread into toast.", "Add beans to toast.", "https://yourcookingbuddy.com/wp-content/uploads/2022/02/baked-beans-toast-img-11.jpg", paul);
         recipeRepository.save(beansOnToast);
-        Recipe carbonara = new Recipe("Spaghetti Carbonara", RecipeType.PASTA, 30, "Bring a pot to a boil and add the Spaghetti.    Add bacon to a cold pan and cook until crispy.  Combine egg and parmesan in a separate bowl.    Remove the pan with the bacon from the heat and combine with pasta, egg mixture and pasta water.", "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-threeByTwoMediumAt2X-v2.jpg", paul);
+        Recipe carbonara = new Recipe("Spaghetti Carbonara", RecipeType.PASTA, 30, "Add bacon to a cold pan and cook until crispy.", "Combine egg and parmesan in a separate bowl.", "Remove the pan with the bacon from the heat and combine with boiled pasta, egg mixture and pasta water.", "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-threeByTwoMediumAt2X-v2.jpg", paul);
         recipeRepository.save(carbonara);
-        Recipe caesar = new Recipe("Chicken Caesar Salad", RecipeType.SALAD, 30, "Cook chicken n put everything in a bowl.", "https://www.cookingclassy.com/wp-content/uploads/2015/01/chicken-caesar-salad2-edit-srgb..jpg", paul);
+        Recipe caesar = new Recipe("Chicken Caesar Salad", RecipeType.SALAD, 30, "Cook chicken in the oven.", "Add Lettuce and Croutons to a bowl and combine remaining ingredients to form the sauce.", "Mix everything together in a bowl and serve.", "https://www.cookingclassy.com/wp-content/uploads/2015/01/chicken-caesar-salad2-edit-srgb..jpg", paul);
         recipeRepository.save(caesar);
-        Recipe macNCheese = new Recipe("Macaroni and Cheese", RecipeType.FAMILY, 45, "Boil water, make a cheese sauce n mix them up", "https://upload.wikimedia.org/wikipedia/commons/4/44/Original_Mac_n_Cheese_.jpg", paul);
+        Recipe macNCheese = new Recipe("Macaroni and Cheese", RecipeType.FAMILY, 45, "Boil water and add pasta.", "Form a roux in a separate pan and add cheese mix.", "Mix together and serve.", "https://upload.wikimedia.org/wikipedia/commons/4/44/Original_Mac_n_Cheese_.jpg", paul);
         recipeRepository.save(macNCheese);
 
 
