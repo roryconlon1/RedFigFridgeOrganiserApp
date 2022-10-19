@@ -83,6 +83,9 @@ public class DataLoader implements ApplicationRunner {
         foodRepository.save(butter);
         Food milk = new Food("Milk (150ml)", 95, FoodType.DAIRY, false, true, "https://kerrsdairy.co.uk/wp-content/uploads/2021/12/1-Pint-Whole-Milk-Glass.jpg", paul);
         foodRepository.save(milk);
+        Food potato = new Food ("Potato (200g)", "130", FoodType.CARBOHYDRATE, false, true, "https://www.macmillandictionary.com/external/slideshow/full/141151_full.jpg", paul);
+        foodRepository.save(potato);
+
 
         Recipe spagBol = new Recipe("Spaghetti Bolognese", RecipeType.PASTA, 300, "Chop veg and add it into a pan with oil.", "After the vegetables are softened add the mince until browned and add tomato.", "Finally cook spaghetti and top with mince.", "https://recipetineats.com/wp-content/uploads/2018/07/Spaghetti-Bolognese.jpg", paul);
         recipeRepository.save(spagBol);
@@ -96,15 +99,16 @@ public class DataLoader implements ApplicationRunner {
         recipeRepository.save(caesar);
         Recipe macNCheese = new Recipe("Macaroni and Cheese", RecipeType.FAMILY, 45, "Boil water and add pasta.", "Form a roux in a separate pan and add cheese mix.", "Mix together and serve.", "https://upload.wikimedia.org/wikipedia/commons/4/44/Original_Mac_n_Cheese_.jpg", paul);
         recipeRepository.save(macNCheese);
-
-
+        Recipe loadedFries = new Recipe("Loaded Fries", RecipeType.FAMILY, 60, "Cut Potato into strips and fry.", "Cook bacon.", "Add Cheese and bacon to the chips and serve.", "https://hips.hearstapps.com/hmg-prod/images/cheese-fries-1544543066.jpg", paul);
+        recipeRepository.save(loadedFries);
+        Recipe mushroomStrog = new Recipe("Mushroom Strogganoff", RecipeType.DIET, 110, "Braise Beef and add vegetables and stock.", "Reduce by half.", "Serve atop cooked pasta.", "https://images-gmi-pmc.edge-generalmills.com/a055d263-34ed-412e-a000-28899e84d501.jpg", paul);
+        recipeRepository.save(mushroomStrog);
 
         spagBol.addFood(mince);
         spagBol.addFood(onion);
         spagBol.addFood(carrot);
         spagBol.addFood(choppedTomato);
         spagBol.addFood(spaghetti);
-        spagBol.addFood(beans);
         spagBol.addFood(bacon);
         recipeRepository.save(spagBol);
 
@@ -116,6 +120,7 @@ public class DataLoader implements ApplicationRunner {
 
         beansOnToast.addFood(beans);
         beansOnToast.addFood(bread);
+        beansOnToast.addFood(cheddar);
         recipeRepository.save(beansOnToast);
 
         carbonara.addFood(egg);
