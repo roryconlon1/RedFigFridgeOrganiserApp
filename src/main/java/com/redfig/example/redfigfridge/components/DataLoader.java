@@ -83,7 +83,7 @@ public class DataLoader implements ApplicationRunner {
         foodRepository.save(butter);
         Food milk = new Food("Milk (150ml)", 95, FoodType.DAIRY, false, true, "https://kerrsdairy.co.uk/wp-content/uploads/2021/12/1-Pint-Whole-Milk-Glass.jpg", paul);
         foodRepository.save(milk);
-        Food potato = new Food ("Potato (200g)", "130", FoodType.CARBOHYDRATE, false, true, "https://www.macmillandictionary.com/external/slideshow/full/141151_full.jpg", paul);
+        Food potato = new Food ("Potato (200g)", 130, FoodType.CARBOHYDRATE, false, true, "https://www.macmillandictionary.com/external/slideshow/full/141151_full.jpg", paul);
         foodRepository.save(potato);
 
 
