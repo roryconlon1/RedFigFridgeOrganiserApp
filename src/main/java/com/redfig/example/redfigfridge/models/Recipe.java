@@ -36,13 +36,19 @@ public class Recipe {
     )
     private List<Food> foods;
 
-    public Recipe(String name, RecipeType recipeType, Integer cookTime, String method, String image) {
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable = true)
+    @JsonIgnoreProperties({"recipes", "foods"})
+    private User user;
+
+    public Recipe(String name, RecipeType recipeType, Integer cookTime, String method, String image, User user) {
         this.name = name;
         this.recipeType = recipeType;
         this.cookTime = cookTime;
         this.method = method;
         this.image = image;
         this.foods = new ArrayList<>();
+        this.user = user;
     }
 
     public Recipe() {
@@ -106,5 +112,13 @@ public class Recipe {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
