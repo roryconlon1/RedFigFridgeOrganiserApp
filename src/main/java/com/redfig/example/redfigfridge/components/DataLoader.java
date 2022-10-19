@@ -113,7 +113,7 @@ public class DataLoader implements ApplicationRunner {
         recipeRepository.save(minceNTatties);
 
         spagBol.addFood(mince);
-        mushroomStrog.addFood(oliveOil);
+        spagBol.addFood(oliveOil);
         spagBol.addFood(onion);
         spagBol.addFood(carrot);
         spagBol.addFood(choppedTomato);
